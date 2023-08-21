@@ -1,0 +1,7 @@
+.backgroundSvg {
+    background-image: url("/background.svg");
+    background-repeat: no-repeat;
+    background-size: cover; /* You can adjust this based on your needs */
+    /* Other background properties like position can be added as well */
+  }
+  
