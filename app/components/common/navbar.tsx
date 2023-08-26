@@ -9,11 +9,11 @@ import Image from 'next/image';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <nav className="md:w-full flex py-4 sm:justify-between items-center navbar bg-transparent ">
+    <nav className="md:w-full flex py-4 sm:justify-between items-center navbar bg-transparent absolute">
       {/* <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /> */}
       {/* <Img></Img> */}
-      <Image src="/logo.svg" alt="logo"  width={60} height={30} />
-      {/* <div className="text-white" >Logo</div> */}
+      
+      <div className="text-white p-5 text-3xl" >Reposight</div> 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
