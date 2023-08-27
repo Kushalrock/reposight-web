@@ -1,5 +1,6 @@
 import Typewriter from "./components/typewriter";
 import Navbar from "./components/common/navbar";
+import Link from "next/link";
 export default function Home() {
   return (
     <main className="h-screen w-screen bg-[url('/mainbg.svg')] bg-cover flex items-center  flex-col">
@@ -19,9 +20,11 @@ export default function Home() {
               />
             </p>
           </div>
-          <button className="py-5 mt-6 px-10 border-black border text-xl text-white hover:bg-black hover:text-white ease-in-out duration-300 rounded-lg ">
-            Get started
-          </button>
+          <Link href="/language" >
+            <button className="py-5 mt-6 px-10 border-black border text-xl text-white hover:bg-black hover:text-white ease-in-out duration-300 rounded-lg ">
+              Get started
+            </button>
+          </Link>
         </div>
       </div>
     </main>
