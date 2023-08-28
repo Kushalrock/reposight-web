@@ -46,14 +46,25 @@ const Page: React.FC = () => {
           </motion.li>
         ))}
       </div>
-      <motion.li
-        className="bg-white text-black text-2xl m-4 lg:ml-96 rounded-xl h-10 w-24 list-none p-0 flex justify-center items-center cursor-pointer"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-      >
-        Next
-      </motion.li>
+      <div className="w-2/3 flex flex-row-reverse justify-between">
+        <motion.li
+          className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+        >
+          Next
+        </motion.li>
+
+        <motion.li
+          className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+        >
+          Back
+        </motion.li>
+      </div>
     </div>
   );
 };
