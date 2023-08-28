@@ -51,7 +51,7 @@ const Page: React.FC = () => {
               Next
             </motion.li>
           </Link>
-          <Link href="/level">
+          <Link href="/language">
             <motion.li
               className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
               initial={{ opacity: 0, y: 20 }}

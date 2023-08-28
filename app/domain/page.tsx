@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+
 
 const options = [
   "Education",
@@ -55,15 +57,16 @@ const Page: React.FC = () => {
         >
           Next
         </motion.li>
-
-        <motion.li
-          className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-        >
-          Back
-        </motion.li>
+        <Link href="/level">
+          <motion.li
+            className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+          >
+            Back
+          </motion.li>
+        </Link>
       </div>
     </div>
   );
