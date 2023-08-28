@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const options = [
   "Education",
@@ -29,8 +30,11 @@ const Page: React.FC = () => {
       <div className="text-6xl text-center mb-2">Domain Preference</div>
       <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-10 p-6">
         {options.map((option, index) => (
-          <button
+          <motion.li
             key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
             className={`flex flex-row items-center justify-center px-2 border rounded-full text-2xl cursor-pointer transition duration-300 lg:h-20 h-10 ${
               selectedOptions.includes(option)
                 ? "bg-white text-black"
@@ -39,12 +43,17 @@ const Page: React.FC = () => {
             onClick={() => toggleOption(option)}
           >
             {option}
-          </button>
+          </motion.li>
         ))}
       </div>
-      <button className="bg-white text-black text-2xl m-4 rounded-xl h-10 w-24">
+      <motion.li
+        className="bg-white text-black text-2xl m-4 lg:ml-96 rounded-xl h-10 w-24 list-none p-0 flex justify-center items-center cursor-pointer"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+      >
         Next
-      </button>
+      </motion.li>
     </div>
   );
 };
