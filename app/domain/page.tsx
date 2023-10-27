@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-
 const options = [
   "Education",
   "Finance",
@@ -29,7 +28,9 @@ const Page: React.FC = () => {
 
   return (
     <div className="bg-zinc-950 w-screen min-h-screen flex justify-center items-center flex-col text-white">
-      <div className="text-6xl text-center mb-2">What type of domain would you like to explore?</div>
+      <div className="text-6xl text-center mb-2">
+        What type of domain would you like to explore?
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-10 p-6">
         {options.map((option, index) => (
           <motion.li
@@ -49,14 +50,16 @@ const Page: React.FC = () => {
         ))}
       </div>
       <div className="w-2/3 flex flex-row-reverse justify-between">
-        <motion.li
-          className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-        >
-          Next
-        </motion.li>
+        <Link href="/home" >
+          <motion.li
+            className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+          >
+            Next
+          </motion.li>
+        </Link>
         <Link href="/level">
           <motion.li
             className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
