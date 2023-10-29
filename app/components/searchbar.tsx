@@ -84,7 +84,7 @@
 // };
 
 // export default Searchbar;
-
+'use client'
 import React, { useState } from "react";
 
 
