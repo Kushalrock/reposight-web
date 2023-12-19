@@ -1,54 +1,42 @@
+// "use client";
+// import React from "react";
+// import AppBar from "../components/common/AppBar/AppBar";
+// const page = () => {
+//   return (
+//     <div className="w-screen h-screen bg-zinc-950 flex-col items-center justify-center ">
+//       <AppBar></AppBar>
+//       <div className="flex flex-col w-2/3 max-h-fit text-white ">
+//         <h1>c</h1>
+//         <h1>c</h1>
+//         <h1>c</h1>
+//         <h1>c</h1>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default page;
+
 "use client";
+import RepoCard from "../components/RepoCard";
 import React from "react";
-import Searchbar from "../components/searchbar";
-import RepoCard from "../components/card";
-import FilterMenu from "../components/FilterMenu"; // Import your FilterMenu component
+import AppBar from "../components/common/AppBar/AppBar";
 
 const Page = () => {
-  const containerStyle = {
-    background:
-      "rgb(234, 157, 204) radial-gradient(circle, rgba(234, 157, 204, 1) 21%, rgba(20, 20, 20, 1) 84%)",
-  };
-
   return (
-    <main
-      className="h-screen w-screen flex items-center flex-col"
-      style={containerStyle}
-    >
-      <FilterMenu />
-
-      <Searchbar />
-      <div className="mt-4">
-        <RepoCard
-          repoName="Kanishk"
-          language="Python"
-          description="hi, this is a sample repo"
-          stars={5}
-          forks={50}
-          url="www.exidge.com"
-        />
+    <div className="w-screen max-h-fit bg-zinc-950 flex flex-col items-center">
+      <AppBar />
+      <div className="flex flex-col items-center md:w-2/3 w-4/5 max-h-fit text-white mt-4">
+        <RepoCard></RepoCard>
+        <RepoCard></RepoCard>
+        <RepoCard></RepoCard>
+        <RepoCard></RepoCard>
+        <RepoCard></RepoCard>
+        <RepoCard></RepoCard>
+        <RepoCard></RepoCard>
+        <RepoCard></RepoCard>
       </div>
-      <div className="mt-4">
-        <RepoCard
-          repoName="Kanishk"
-          language="Python"
-          description="hi, this is a sample repo"
-          stars={5}
-          forks={50}
-          url="www.exidge.com"
-        />
-      </div>
-      <div className="mt-4">
-        <RepoCard
-          repoName="Kanishk"
-          language="Python"
-          description="hi, this is a sample repo"
-          stars={5}
-          forks={50}
-          url="www.exidge.com"
-        />
-      </div>
-    </main>
+    </div>
   );
 };
 
