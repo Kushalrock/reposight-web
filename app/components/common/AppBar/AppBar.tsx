@@ -54,7 +54,7 @@ const AppBar: React.FC = () => {
           startContent={<SearchIcon size={18} />}
           type="search"
         />
-        <Dropdown placement="bottom-end">
+        <Dropdown placement="bottom-end" className="bg-[#3c3c3c] text-white " >
           <DropdownTrigger>
             <Avatar
               isBordered
@@ -66,7 +66,7 @@ const AppBar: React.FC = () => {
               src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
             />
           </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat">
+          <DropdownMenu aria-label="Profile Actions" variant="flat"  >
             <DropdownItem key="profile" className="h-14 gap-2">
               <p className="font-semibold">Signed in as</p>
               <p className="font-semibold">zoey@example.com</p>

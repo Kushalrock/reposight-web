@@ -1,29 +1,42 @@
-"use client"
-import React, { useState } from "react";
-import { MdClose, MdMenu } from "react-icons/md";
+import React from "react";
+import { Accordion, AccordionItem } from "@nextui-org/react";
+import Language from "./Language";
+import Difficulty from "./Difficulty";
+import Domain from "./Domain";
+interface AppProps {}
 
-const FilterMenu = () => {
-  const [isMobile, setIsMobile] = useState(true);
-
-  const toggleMobile = () => {
-    setIsMobile(!isMobile);
-  };
-
+const FilterMenu: React.FC<AppProps> = () => {
   return (
-    <div>
-      <button
-        className="absolute top-2 right-2 text-white cursor-pointer "
-        onClick={toggleMobile}
+    <Accordion
+      variant="shadow"
+      selectionMode="multiple"
+      className="w-[210px] absolute left-6 top-24 bg-[#3c3c3c] text-white "
+    >
+      <AccordionItem
+        key="1"
+        aria-label="Accordion 1"
+        className="w-[175px] text-white"
+        title="Language"
       >
-        {isMobile ? <MdClose size={24} /> : <MdMenu size={24} />}
-      </button>
-      {isMobile && (
-        <div className="fixed top-0 left-0 h-full  w-[20vw]  flex flex-col p-4 shadow-lg bg-black bg-opacity-40">
-          <div className="text-white">shahzil</div>
-          <div className="text-white">shahzil</div>
-        </div>
-      )}
-    </div>
+        <Language></Language>
+      </AccordionItem>
+      <AccordionItem
+        key="2"
+        aria-label="Accordion 2"
+        className="w-[175px] text-red-500 "
+        title="Difficulty"
+      >
+        <Difficulty></Difficulty>
+      </AccordionItem>
+      <AccordionItem
+        key="3"
+        aria-label="Accordion 3"
+        className="w-[175px] text-white"
+        title="Domain"
+      >
+        <Domain></Domain>
+      </AccordionItem>
+    </Accordion>
   );
 };
 
