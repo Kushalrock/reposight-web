@@ -12,7 +12,7 @@ import {
 
 const RepoCard: React.FC = () => {
   return (
-    <Card className="w-full p-2 m-2 bg-black text-white border ">
+    <Card className="w-full p-2 m-2 bg-[#3c3c3c] text-white ">
       <CardHeader className="flex gap-3">
         <div className="flex flex-col">
           <p className="text-md">Repository Name</p>
