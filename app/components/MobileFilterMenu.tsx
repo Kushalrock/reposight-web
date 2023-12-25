@@ -14,8 +14,8 @@ import {
 
 export default function App() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [modalPlacement, setModalPlacement] = useState<string>("bottom-center");
-  const [backdrop, setBackdrop] = useState<string>("blur");
+  const [modalPlacement, setModalPlacement] = useState<any>("bottom-center");
+  const [backdrop, setBackdrop] = useState<any>("blur");
 
   return (
     <div className="flex flex-col gap-2  ">
