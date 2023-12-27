@@ -17,15 +17,7 @@ const Page = () => {
         <MobileFilterMenu></MobileFilterMenu>
       </div>
       <div className="flex flex-col items-center md:w-2/3 w-4/5 max-h-fit text-white mt-4">
-        <IssueCard></IssueCard>
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          className="w-full"
-        >
-          <RepoCard></RepoCard>
-        </motion.div>
+        {/* <IssueCard></IssueCard> */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -129,7 +121,15 @@ const Page = () => {
           className="w-full"
         >
           <RepoCard></RepoCard>
-        </motion.div> */}
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="w-full"
+        >
+          <RepoCard></RepoCard>
+        </motion.div>
       </div>
     </div>
   );
