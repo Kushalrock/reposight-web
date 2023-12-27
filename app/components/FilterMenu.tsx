@@ -63,7 +63,7 @@ const FilterMenu: React.FC<AppProps> = ({ className }) => {
         key="1"
         aria-label="Accordion 1"
         className="w-[175px] text-white"
-        title="Language"
+        title={<span className="text-white">Language</span>}
       >
         <Language />
       </AccordionItem>
@@ -71,7 +71,7 @@ const FilterMenu: React.FC<AppProps> = ({ className }) => {
         key="2"
         aria-label="Accordion 2"
         className="w-[175px] text-white "
-        title="Difficulty"
+        title={<span className="text-white">Difficulty</span>}
       >
         <Difficulty />
       </AccordionItem>
@@ -79,7 +79,7 @@ const FilterMenu: React.FC<AppProps> = ({ className }) => {
         key="3"
         aria-label="Accordion 3"
         className="w-[175px] text-white"
-        title="Domain"
+        title={<span className="text-white">Domain</span>}
       >
         <Domain />
       </AccordionItem>

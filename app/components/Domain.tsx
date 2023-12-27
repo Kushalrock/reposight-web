@@ -24,7 +24,7 @@ export default function Domain() {
           className="text-white"
           color="warning"
         >
-          {domain.label}
+          {<span className="text-white">{domain.label}</span>}
         </Checkbox>
       ))}
     </CheckboxGroup>
