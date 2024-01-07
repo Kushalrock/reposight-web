@@ -25,7 +25,7 @@ export default function Language() {
           className="text-white"
           color="warning"
         >
-          {language.label}
+       {<span className="text-white">{language.label}</span>}
         </Checkbox>
       ))}
     </CheckboxGroup>

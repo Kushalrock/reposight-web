@@ -22,7 +22,7 @@ export default function Difficulty() {
           className="text-white"
           color="warning"
         >
-          {difficulty.label}
+          {<span className="text-white">{difficulty.label}</span>}
         </Checkbox>
       ))}
     </CheckboxGroup>
