@@ -6,7 +6,12 @@ import FilterMenu from "../components/FilterMenu";
 import MobileFilterMenu from "../components/MobileFilterMenu";
 import { motion } from "framer-motion";
 import IssueCard from "../components/IssueCard";
+import getFilteredRepos from "../Hooks/FetchRepos";
+import useFilterStore from "../Store/store";
 const Page = () => {
+  const languages = useFilterStore((state) => state.languages);
+  const domains = useFilterStore((state) => state.topics);
+  const levels = useFilterStore((state) => state.difficulties);
   return (
     <div className="w-screen max-h-fit bg-black flex flex-col items-center">
       <AppBar />
@@ -16,7 +21,7 @@ const Page = () => {
       <div className="md:hidden">
         <MobileFilterMenu></MobileFilterMenu>
       </div>
-      <div className="flex flex-col items-center md:w-2/3 w-4/5 max-h-fit text-white mt-4">
+      <div className="flex flex-col items-center md:w-2/3 w-4/5 max-h-fit text-white mt-4 ">
         {/* <IssueCard></IssueCard> */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -24,9 +29,107 @@ const Page = () => {
           transition={{ duration: 0.7 }}
           className="w-full"
         >
-          <RepoCard></RepoCard>
+          <RepoCard
+            fields={[
+              "Repository Name",
+              "Mohd Shahzil",
+              "Make beautiful websites regardless of your design experience.",
+              "https://github.com/nextui-org/nextui",
+            ]}
+          />
         </motion.div>
         <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="w-full"
+        >
+          <RepoCard
+            fields={[
+              "Repository Name",
+              "Mohd Shahzil",
+              "Make beautiful websites regardless of your design experience.",
+              "https://github.com/nextui-org/nextui",
+            ]}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="w-full"
+        >
+          <RepoCard
+            fields={[
+              "Repository Name",
+              "Mohd Shahzil",
+              "Make beautiful websites regardless of your design experience.",
+              "https://github.com/nextui-org/nextui",
+            ]}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="w-full"
+        >
+          <RepoCard
+            fields={[
+              "Repository Name",
+              "Mohd Shahzil",
+              "Make beautiful websites regardless of your design experience.",
+              "https://github.com/nextui-org/nextui",
+            ]}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="w-full"
+        >
+          <RepoCard
+            fields={[
+              "Repository Name",
+              "Mohd Shahzil",
+              "Make beautiful websites regardless of your design experience.",
+              "https://github.com/nextui-org/nextui",
+            ]}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="w-full"
+        >
+          <RepoCard
+            fields={[
+              "Repository Name",
+              "Mohd Shahzil",
+              "Make beautiful websites regardless of your design experience.",
+              "https://github.com/nextui-org/nextui",
+            ]}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="w-full"
+        >
+          <RepoCard
+            fields={[
+              "Repository Name",
+              "Mohd Shahzil",
+              "Make beautiful websites regardless of your design experience.",
+              "https://github.com/nextui-org/nextui",
+            ]}
+          />
+        </motion.div>
+
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
@@ -129,7 +232,7 @@ const Page = () => {
           className="w-full"
         >
           <RepoCard></RepoCard>
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );

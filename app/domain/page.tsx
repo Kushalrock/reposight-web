@@ -1,9 +1,10 @@
-"use client";
+"use client"
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import useFilterStore from '../Store/store'; 
 
-const options = [
+const options: string[] = [
   "Education",
   "Finance",
   "Health",
@@ -15,8 +16,9 @@ const options = [
   "Other",
 ];
 
-const Page: React.FC = () => {
+const DomainPage: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const setTopics = useFilterStore(state => state.setTopics); 
 
   const toggleOption = (option: string) => {
     if (selectedOptions.includes(option)) {
@@ -24,6 +26,11 @@ const Page: React.FC = () => {
     } else {
       setSelectedOptions([...selectedOptions, option]);
     }
+  };
+
+  const updateStore = () => {
+    console.log(selectedOptions)
+    setTopics(selectedOptions);
   };
 
   return (
@@ -50,12 +57,13 @@ const Page: React.FC = () => {
         ))}
       </div>
       <div className="w-2/3 flex flex-row-reverse justify-between">
-        <Link href="/home" >
+        <Link href="/home">
           <motion.li
             className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
+            onClick={updateStore}
           >
             Next
           </motion.li>
@@ -75,4 +83,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default DomainPage;
