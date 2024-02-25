@@ -1,11 +1,14 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-const options = ["C/C++", "C#", "JS", "Java", "Python", "Other"];
+import useFilterStore from '../Store/store'; 
+
+const options: string[] = ["C/C++", "C#", "JS", "Java", "Python", "Other"];
 
 const Page: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const setLanguages = useFilterStore(state => state.setLanguages);
 
   const toggleOption = (option: string) => {
     if (selectedOptions.includes(option)) {
@@ -13,6 +16,11 @@ const Page: React.FC = () => {
     } else {
       setSelectedOptions([...selectedOptions, option]);
     }
+  };
+
+  const updateStore = () => {
+    console.log(selectedOptions)
+    setLanguages(selectedOptions);
   };
 
   return (
@@ -46,6 +54,7 @@ const Page: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
+              onClick={updateStore} // Call updateStore function when Next is clicked
             >
               Next
             </motion.li>

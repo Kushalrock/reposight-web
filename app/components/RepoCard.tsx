@@ -1,4 +1,3 @@
-"use client"
 import React from "react";
 import {
   Card,
@@ -10,25 +9,31 @@ import {
   Image,
 } from "@nextui-org/react";
 
-const RepoCard: React.FC = () => {
+interface RepoCardProps {
+  fields: string[];
+}
+
+const RepoCard: React.FC<RepoCardProps> = ({ fields }) => {
+  const [repoName, ownerName, description, githubLink] = fields;
+
   return (
     <Card className="w-full p-2 m-2 bg-[#3c3c3c] text-white ">
       <CardHeader className="flex gap-3">
         <div className="flex flex-col">
-          <p className="text-md">Repository Name</p>
-          <p className="text-small text-default-500">Mohd Shahzil</p>
+          <p className="text-md">{repoName}</p>
+          <p className="text-small text-default-500">{ownerName}</p>
         </div>
       </CardHeader>
       <Divider className="bg-slate-500 h-[1.5px] " />
       <CardBody>
-        <p>Make beautiful websites regardless of your design experience.</p>
+        <p>{description}</p>
       </CardBody>
       <div className="flex justify-center"></div>
       <CardFooter className="flex  flex-col md:flex-row justify-between">
         <Link
           isExternal
           showAnchorIcon
-          href="https://github.com/nextui-org/nextui"
+          href={githubLink}
           className="text-yellow-400"
         >
           Visit source code on GitHub.
