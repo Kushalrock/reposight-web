@@ -1,12 +1,14 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import useFilterStore from '../Store/store'; // Import the Zustand store
 
-const options = ["Beginner", "Intermediate", "Advanced"];
+const options: string[] = ["Beginner", "Intermediate", "Advanced"];
 
-const Page: React.FC = () => {
+const DifficultyPage: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const setDifficulties = useFilterStore(state => state.setDifficulties); // Accessing the setDifficulties function from the Zustand store
 
   const toggleOption = (option: string) => {
     if (selectedOptions.includes(option)) {
@@ -14,6 +16,12 @@ const Page: React.FC = () => {
     } else {
       setSelectedOptions([...selectedOptions, option]);
     }
+  };
+
+
+  const updateStore = () => {
+    console.log(selectedOptions)
+    setDifficulties(selectedOptions);
   };
 
   return (
@@ -47,6 +55,7 @@ const Page: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
+              onClick={updateStore}
             >
               Next
             </motion.li>
@@ -67,4 +76,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default DifficultyPage;
