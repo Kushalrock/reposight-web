@@ -1,32 +1,47 @@
-import Typewriter from "./components/typewriter";
-import Navbar from "./components/common/navbar";
-import Link from "next/link";
-export default function Home() {
+"use client";
+import React from "react";
+import { SparklesCore } from "@/components/ui/sparkles";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+const page = () => {
+  const words = [
+    {
+      text: "Find",
+      className: "text-white",
+    },
+    {
+      text: "Opensource",
+      className: "text-white",
+    },
+    {
+      text: "projects",
+      className: "text-white",
+    },
+    {
+      text: "with",
+      className: "text-white",
+    },
+    {
+      text: "Reposight.",
+      className: "text-blue-500 dark:text-blue-500",
+    },
+  ];
   return (
-    <main className="h-screen w-screen bg-[url('/mainbg.svg')] bg-cover flex items-center  flex-col">
-      <div className="bg-[#0000009c] ">
-        <Navbar></Navbar>
-        <div className="h-screen w-screen flex items-center justify-center flex-col">
-          <div className="flex flex-col items-center justify-center">
-            <p className="text-white lg:text-5xl font-bold md:text-4xl sm:text-2xl">
-              Find Open Source Projects
-            </p>
-            <p className="text-white lg:text-5xl font-bold md:text-4xl sm:text-2xl">
-              that fits{" "}
-              <Typewriter
-                textArr={["your profile ", "your needs ", "your wants "]}
-                delay={200}
-                styles="underline"
-              />
-            </p>
-          </div>
-          <Link href="/language" >
-            <button className="py-5 mt-6 px-10 border-black border text-xl text-white hover:bg-black hover:text-white ease-in-out duration-300 rounded-lg ">
-              Get started
-            </button>
-          </Link>
-        </div>
+    <div className="min-h-screen relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <div className="w-full absolute inset-0 h-screen">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
       </div>
-    </main>
+
+      <TypewriterEffectSmooth words={words} />
+    </div>
   );
-}
+};
+
+export default page;
