@@ -56,7 +56,7 @@ const DomainPage: React.FC = () => {
           </motion.li>
         ))}
       </div>
-      <div className="w-2/3 flex flex-row items-center justify-between m-4">
+      <div className="md:w-2/3 w-3/4 flex flex-row items-center justify-between m-4">
         <Link href="/level">
           <motion.li
             className="bg-white text-black text-2xl   rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer"
