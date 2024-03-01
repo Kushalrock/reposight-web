@@ -21,6 +21,7 @@ const AppBar: React.FC = () => {
       isBordered
       shouldHideOnScroll
       className="bg-transparent text-white "
+      maxWidth="full"
     >
       <NavbarContent justify="end">
         <NavbarBrand className="mr-4">
