@@ -1,5 +1,6 @@
 "use client";
 import RepoCard from "../components/RepoCard";
+import Link from "next/link";
 import React from "react";
 import AppBar from "../components/common/AppBar/AppBar";
 import FilterMenu from "../components/FilterMenu";
@@ -30,14 +31,16 @@ const Page = () => {
           transition={{ duration: 0.7 }}
           className="w-full"
         >
-          <RepoCard
-            fields={[
-              "Repository Name",
-              "Mohd Shahzil",
-              "Make beautiful websites regardless of your design experience.",
-              "https://github.com/nextui-org/nextui",
-            ]}
-          />
+          <Link href="/issues">
+            <RepoCard
+              fields={[
+                "Repository Name",
+                "Mohd Shahzil",
+                "Make beautiful websites regardless of your design experience.",
+                "https://github.com/nextui-org/nextui",
+              ]}
+            />
+          </Link>
         </motion.div>
       </div>
     </div>
