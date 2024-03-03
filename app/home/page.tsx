@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import IssueCard from "../components/IssueCard";
 import getFilteredRepos from "../Hooks/FetchRepos";
 import useFilterStore from "../Store/store";
+import { SparklesCore } from "@/components/ui/sparkles";
 // max-h-fit
 const Page = () => {
   const languages = useFilterStore((state) => state.languages);
@@ -17,6 +18,15 @@ const Page = () => {
   return (
     <div className="w-screen min-h-screen bg-black flex flex-col items-center">
       <AppBar />
+      <SparklesCore
+        id="tsparticlesfullpage"
+        background="transparent"
+        minSize={0.6}
+        maxSize={1.4}
+        particleDensity={100}
+        className="w-full h-full"
+        particleColor="#FFFFFF"
+    />
       <div className="hidden md:block">
         <FilterMenu className="absolute left-6 top-24" />
       </div>
