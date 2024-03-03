@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import fetchReposAndIssues from "../Hooks/FetchRepos";
 import useFilterStore from "../Store/store";
 import RepoCard from "../components/RepoCard";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 interface Repo {
   repo_id: string;
@@ -43,6 +44,15 @@ const Page: React.FC = () => {
   return (
     <div className="w-screen min-h-screen bg-black flex flex-col items-center">
       <AppBar />
+      <SparklesCore
+        id="tsparticlesfullpage"
+        background="transparent"
+        minSize={0.6}
+        maxSize={1.4}
+        particleDensity={100}
+        className="w-full h-full"
+        particleColor="#FFFFFF"
+    />
       <div className="hidden md:block">
         <FilterMenu className="absolute left-6 top-24" />
       </div>
