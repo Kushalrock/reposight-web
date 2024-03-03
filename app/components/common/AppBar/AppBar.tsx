@@ -6,13 +6,7 @@ import {
   NavbarItem,
   Link,
   Input,
-  DropdownItem,
-  DropdownTrigger,
-  Dropdown,
-  DropdownMenu,
-  Avatar,
 } from "@nextui-org/react";
-import Logo from "./Logo";
 import SearchIcon from "./SearchIcon";
 
 const AppBar: React.FC = () => {
@@ -55,7 +49,7 @@ const AppBar: React.FC = () => {
           startContent={<SearchIcon size={18} />}
           type="search"
         />
-        <Dropdown placement="bottom-end" className="bg-[#3c3c3c] text-white " >
+        {/* <Dropdown placement="bottom-end" className="bg-[#3c3c3c] text-white " >
           <DropdownTrigger>
             <Avatar
               isBordered
@@ -82,7 +76,7 @@ const AppBar: React.FC = () => {
               Log Out
             </DropdownItem>
           </DropdownMenu>
-        </Dropdown>
+        </Dropdown> */}
       </NavbarContent>
     </Navbar>
   );
