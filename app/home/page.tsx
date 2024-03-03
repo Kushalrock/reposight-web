@@ -1,19 +1,45 @@
 "use client";
-import RepoCard from "../components/RepoCard";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import React from "react";
 import AppBar from "../components/common/AppBar/AppBar";
 import FilterMenu from "../components/FilterMenu";
 import MobileFilterMenu from "../components/MobileFilterMenu";
 import { motion } from "framer-motion";
-import IssueCard from "../components/IssueCard";
-import getFilteredRepos from "../Hooks/FetchRepos";
+import fetchReposAndIssues from "../Hooks/FetchRepos";
 import useFilterStore from "../Store/store";
-// max-h-fit
-const Page = () => {
-  const languages = useFilterStore((state) => state.languages);
-  const domains = useFilterStore((state) => state.topics);
-  const levels = useFilterStore((state) => state.difficulties);
+import RepoCard from "../components/RepoCard";
+
+interface Repo {
+  repo_id: string;
+  repo_name: string;
+  repo_desc: string;
+}
+
+const Page: React.FC = () => {
+  const [repos, setRepos] = useState<Repo[]>([]);
+  const languages = useFilterStore(state => state.languages);
+  const difficulty = useFilterStore(state => state.difficulties);
+  const topics = useFilterStore(state => state.topics);
+
+  useEffect(() => {
+    const fetchRepos = async () => {
+      try {
+        const fetchedRepos = await fetchReposAndIssues(languages, difficulty, topics);
+        // Assuming fetchedRepos is an array of JSON objects
+        const reposData: Repo[] = fetchedRepos.map((repo: any) => ({
+          repo_id: repo.repo_id,
+          repo_name: repo.repo_name,
+          repo_desc: repo.repo_desc
+        }));
+        setRepos(reposData);
+      } catch (error) {
+        console.error("Error fetching repos:", error);
+      }
+    };
+    console.log(languages, topics, difficulty);
+    fetchRepos();
+  }, [languages, difficulty, topics]);
+
   return (
     <div className="w-screen min-h-screen bg-black flex flex-col items-center">
       <AppBar />
@@ -24,29 +50,23 @@ const Page = () => {
         <MobileFilterMenu></MobileFilterMenu>
       </div>
       <div className="flex flex-col items-center md:w-2/3 w-4/5 max-h-fit text-white mt-4 ">
-        {/* <IssueCard></IssueCard> */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          className="w-full"
-        >
-          <Link href="/issues">
+        {repos.map((repo, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            className="w-full"
+          >
             <RepoCard
-              fields={[
-                "Repository Name",
-                "Mohd Shahzil",
-                "Make beautiful websites regardless of your design experience.",
-                "https://github.com/nextui-org/nextui",
-              ]}
+              key={repo.repo_id}
+              fields={[repo.repo_name, "", repo.repo_desc]}
             />
-          </Link>
-        </motion.div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default Page;
-
-//fff

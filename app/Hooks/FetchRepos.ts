@@ -1,57 +1,57 @@
-import { Client, types } from 'cassandra-driver';
+import axios, { AxiosResponse } from 'axios';
 
-const client = new Client({
-    contactPoints: ['localhost'],
-    localDataCenter: 'datacenter1',
-});
+async function fetchReposAndIssues(languages: string[], difficulty: string[], topics: string[], page = 1, pageSize = 10): Promise<Repo[]> {
+  const queryParams = new URLSearchParams();
+  if (languages.length > 0) {
+    queryParams.append('languages', languages.join(','));
+  }
+  if (difficulty.length > 0) {
+    queryParams.append('difficulty', difficulty.join(','));
+  }
+  if (topics.length > 0) {
+    queryParams.append('topics', topics.join(','));
+  }
+  queryParams.append('page', page.toString());
+  queryParams.append('pageSize', pageSize.toString());
+  console.log(queryParams);
 
-async function getFilteredRepos(languages: string[], domains: string[], difficulty: string[]): Promise<any[]> {
-    try {
-        let query = `SELECT * FROM reposight.repos`;
-        const params: (string | types.Uuid)[] = [];
+  try {
+    const url = `http://localhost:5000/api/getReposAndIssues?${queryParams.toString()}`;
 
-        if (languages && languages.length > 0) {
-            query += ' WHERE ';
-            query += '(';
-            languages.forEach((lang, index) => {
-                if (index > 0) query += ' OR ';
-                query += `tags CONTAINS ?`;
-                params.push(lang);
-            });
-            query += ')';
-        }
+    const response: AxiosResponse = await axios.get(url);
 
-        if (domains && domains.length > 0) {
-            if (languages && languages.length > 0) query += ' AND ';
-            else query += ' WHERE ';
-            query += '(';
-            domains.forEach((domain, index) => {
-                if (index > 0) query += ' OR ';
-                query += `tags CONTAINS ?`;
-                params.push(domain);
-            });
-            query += ')';
-        }
+    const data = response.data;
+    console.log(data);
 
-        if (difficulty && difficulty.length > 0) {
-            if (languages || domains) query += ' AND ';
-            else query += ' WHERE ';
-            query += '(';
-            difficulty.forEach((diff, index) => {
-                if (index > 0) query += ' OR ';
-                query += `difficulty = ?`;
-                params.push(diff);
-            });
-            query += ')';
-        }
-
-        const reposResult = await client.execute(query, params, { prepare: true });
-        const repos: any[] = reposResult.rows;
-        
-        return repos;
-    } catch (error) {
-        console.error('Error:', error);
-        throw new Error('An error occurred while fetching repositories.');
+    if (response.status !== 200) {
+      throw new Error(data.error || 'Failed to fetch repositories and issues');
     }
+
+    return Object.values(data.data.repos) as Repo[];
+  } catch (error) {
+    console.error('Error:', error);
+    throw new Error('Failed to fetch repositories and issues');
+  }
 }
-export default getFilteredRepos;
+
+interface Repo {
+  repo_id: string;
+  name: string;
+  description: string;
+  tags: string[];
+  avg_ratings: number;
+  issues: Issue[];
+  beginnerIssues: number;
+  intermediateIssues: number;
+  advancedIssues: number;
+}
+
+interface Issue {
+  issue_id: string;
+  title: string;
+  description: string;
+  difficulty: string;
+  status: string;
+}
+
+export default fetchReposAndIssues;
