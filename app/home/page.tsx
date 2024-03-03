@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import AppBar from "../components/common/AppBar/AppBar";
 import FilterMenu from "../components/FilterMenu";
 import MobileFilterMenu from "../components/MobileFilterMenu";

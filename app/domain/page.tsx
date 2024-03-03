@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import useFilterStore from '../Store/store'; 
+import useFilterStore from "../Store/store";
 
 const options: string[] = [
   "Education",
@@ -18,7 +18,7 @@ const options: string[] = [
 
 const DomainPage: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-  const setTopics = useFilterStore(state => state.setTopics); 
+  const setTopics = useFilterStore((state) => state.setTopics);
 
   const toggleOption = (option: string) => {
     if (selectedOptions.includes(option)) {
@@ -29,7 +29,7 @@ const DomainPage: React.FC = () => {
   };
 
   const updateStore = () => {
-    console.log(selectedOptions)
+    console.log(selectedOptions);
     setTopics(selectedOptions);
   };
 
@@ -45,7 +45,7 @@ const DomainPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className={`flex flex-row items-center justify-center px-6 border rounded-full text-2xl cursor-pointer transition duration-300 lg:h-20 h-10 ${
+            className={`flex flex-row items-center justify-center px-6 border rounded-full text-2xl cursor-pointer transition duration-300 lg:h-20 h-14 ${
               selectedOptions.includes(option)
                 ? "bg-white text-black"
                 : "hover:bg-white hover:text-black"
@@ -56,26 +56,26 @@ const DomainPage: React.FC = () => {
           </motion.li>
         ))}
       </div>
-      <div className="w-2/3 flex flex-row-reverse justify-between">
+      <div className="md:w-2/3 w-3/4 flex flex-row items-center justify-between m-4">
+        <Link href="/level">
+          <motion.li
+            className="bg-white text-black text-2xl   rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+          >
+            Back
+          </motion.li>
+        </Link>
         <Link href="/home">
           <motion.li
-            className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
+            className="bg-white text-black text-2xl   rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
             onClick={updateStore}
           >
             Next
-          </motion.li>
-        </Link>
-        <Link href="/level">
-          <motion.li
-            className="bg-white text-black text-2xl m-4  rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer hover:py-5"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
-          >
-            Back
           </motion.li>
         </Link>
       </div>
