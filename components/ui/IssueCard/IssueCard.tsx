@@ -24,6 +24,7 @@ const IssueCard: React.FC<Props> = ({ repoId }) => {
     const fetchIssues = async () => {
       try {
         // Call fetchIssues function to get issue details
+        console.log(difficulty);
         const fetchedIssues: Issue[] = await fetchRepoIssues(repoId,difficulty);
         // Set the state with fetched data
         setIssues(fetchedIssues);

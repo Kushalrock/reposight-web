@@ -19,11 +19,17 @@ const fetchRepoIssues = async (repoId: string, difficulty: string[] = []): Promi
     try {
         // Construct the URL for the API endpoint
         let apiUrl = `http://localhost:5000/api/getRepoIssues?repo_id=${repoId}`;
+        
+        // If difficulty array is not empty, append difficulties to the apiUrl
         if (difficulty.length > 0) {
-            // Encode each difficulty separately and join them with commas
-            const encodedDifficulties = difficulty.map(encodeURIComponent).join(',');
+            // Use reduce to encode each difficulty and build the string with commas
+            const encodedDifficulties = difficulty.reduce((acc, cur) => {
+                return acc + encodeURIComponent(cur) + ',';
+            }, '').slice(0, -1); // Remove the last comma
             apiUrl += `&difficulty=${encodedDifficulties}`;
         }
+        
+        console.log(apiUrl);
 
         // Fetch data from the API using Axios
         const response = await axios.get<ApiResponse>(apiUrl);
@@ -37,5 +43,6 @@ const fetchRepoIssues = async (repoId: string, difficulty: string[] = []): Promi
         throw new Error('An error occurred while fetching data');
     }
 };
+
 
 export default fetchRepoIssues;
