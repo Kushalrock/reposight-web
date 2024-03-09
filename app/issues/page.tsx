@@ -9,7 +9,8 @@ import { useSearchParams } from "next/navigation";
 const IssueCardPage: React.FC = () => {
   const searchparams=useSearchParams();
   const repoId=searchparams.get("repoId");
-
+  const difficulty=searchparams.get("difficulty");
+  console.log(typeof(difficulty));
   // You can fetch other necessary data from store or elsewhere if needed
 
   return (
@@ -46,7 +47,7 @@ const IssueCardPage: React.FC = () => {
           <div className="text-white text-2xl md:mt-4 mt-2 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
             {searchparams.get("repoDesc")}
           </div>
-          <IssueCard repoId={repoId as string} />
+          <IssueCard repoId={repoId as string} difficulty={difficulty as string}/>
         </div>
       </div>
     </div>

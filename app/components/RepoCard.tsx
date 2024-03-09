@@ -1,6 +1,4 @@
 "use client";
-// RepoCard.tsx
-
 import React from "react";
 import {
   Card,
@@ -10,15 +8,18 @@ import {
   Divider,
   Link,
 } from "@nextui-org/react";
+import useFilterStore from "../Store/store";
 interface RepoCardProps {
   fields: string[];
 }
 
 const RepoCard: React.FC<RepoCardProps> = ({ fields }) => {
   const [repoId, repoName, ownerName, description, githubLink] = fields;
+  const difficulties=useFilterStore((state)=>state.difficulties);
   const queryString = `?repoId=${repoId}&repoName=${encodeURIComponent(
     repoName
-  )}&repoDesc=${encodeURIComponent(description)}`;
+  )}&repoDesc=${encodeURIComponent(description)}&difficulty=${encodeURIComponent(difficulties.join(','))}`;
+  console.log(decodeURIComponent(queryString));
   return (
     <Card className="w-full p-2 m-2 bg-[#3c3c3c] text-black ">
       <CardHeader className="flex gap-3">

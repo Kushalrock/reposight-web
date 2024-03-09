@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import fetchRepoIssues from "@/app/Hooks/FetchIssue";
-import useFilterStore from "@/app/Store/store";
 
 interface Issue {
   repo_id: string;
@@ -15,17 +14,19 @@ interface Issue {
 
 interface Props {
   repoId: string;
+  difficulty:string;
 }
 
-const IssueCard: React.FC<Props> = ({ repoId }) => {
+const IssueCard: React.FC<Props> = ({ repoId,difficulty}) => {
+  const difficulties=difficulty.split(",");
+  console.log(difficulties);
   const [issues, setIssues] = useState<Issue[]>([]);
-  const difficulty = useFilterStore((state) => state.difficulties);
   useEffect(() => {
     const fetchIssues = async () => {
       try {
         // Call fetchIssues function to get issue details
         console.log(difficulty);
-        const fetchedIssues: Issue[] = await fetchRepoIssues(repoId,difficulty);
+        const fetchedIssues: Issue[] = await fetchRepoIssues(repoId,difficulties);
         // Set the state with fetched data
         setIssues(fetchedIssues);
       } catch (error) {
