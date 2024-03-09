@@ -9,7 +9,7 @@ const options: string[] = ["Beginner", "Intermediate", "Advanced"];
 const DifficultyPage: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const setDifficulties = useFilterStore((state) => state.setDifficulties); // Accessing the setDifficulties function from the Zustand store
-
+  const difficulties=useFilterStore((state)=>state.difficulties);
   const toggleOption = (option: string) => {
     if (selectedOptions.includes(option)) {
       setSelectedOptions(selectedOptions.filter((item) => item !== option));
@@ -21,6 +21,7 @@ const DifficultyPage: React.FC = () => {
   const updateStore = () => {
     console.log(selectedOptions);
     setDifficulties(selectedOptions);
+    console.log(difficulties)
   };
 
   return (

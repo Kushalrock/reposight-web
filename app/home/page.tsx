@@ -21,7 +21,9 @@ const Page: React.FC = () => {
   const languages = useFilterStore((state) => state.languages);
   const difficulty = useFilterStore((state) => state.difficulties);
   const topics = useFilterStore((state) => state.topics);
-
+  console.log(languages);
+  console.log(difficulty);
+  console.log(topics);
   useEffect(() => {
     const fetchRepos = async () => {
       try {
@@ -64,7 +66,7 @@ const Page: React.FC = () => {
             >
               <RepoCard
                 key={repo.repo_id}
-                fields={[repo.repo_name, "", repo.repo_desc, repo.repo_url]}
+                fields={[repo.repo_id,repo.repo_name, "", repo.repo_desc, repo.repo_url]}
               />
             </motion.div>
           ))}
