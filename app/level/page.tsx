@@ -27,7 +27,7 @@ const DifficultyPage: React.FC = () => {
   return (
     <>
       <div className="bg-zinc-950 w-screen min-h-screen flex justify-center items-center flex-col text-white">
-        <div className="text-6xl text-center mb-2">
+        <div className="text-4xl md:text-6xl text-center mb-2">
           What type of issues would you like to target?
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-10 p-6">
@@ -60,7 +60,7 @@ const DifficultyPage: React.FC = () => {
               Back
             </motion.li>
           </Link>
-          <Link href="/domain">
+          <Link href="/home">
             <motion.li
               className="bg-white text-black text-2xl   rounded-xl list-none px-8 py-3 flex justify-center items-center cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
