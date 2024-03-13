@@ -26,10 +26,10 @@ const Page: React.FC = () => {
   return (
     <div>
       <div className=" bg-zinc-950 w-screen min-h-screen flex justify-center items-center flex-col text-white">
-        <div className=" text-6xl text-center mb-2">
+        <div className="text-4xl md:text-6xl text-center mb-2">
           What language do you code in?
         </div>
-        <div className="  grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-10 p-6">
+        <div className="  grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 gap-10 p-6">
           {options.map((option, index) => (
             <motion.li
               key={index}
