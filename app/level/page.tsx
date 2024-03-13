@@ -30,7 +30,7 @@ const DifficultyPage: React.FC = () => {
         <div className="text-4xl md:text-6xl text-center mb-2 sm:p-4">
           What type of issues would you like to target?
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-10 p-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 p-6">
           {options.map((option, index) => (
             <motion.li
               key={index}
