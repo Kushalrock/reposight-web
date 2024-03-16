@@ -37,7 +37,7 @@ const page = () => {
     </div>
     <div className="flex mt-8 flex-col sm:flex-row">
         <div className="text-white mr-4 flex-col sm:w-1/2" style={{ flex: 1, fontSize: '1.0rem', maxWidth: "600px" }}>
-            <p className="mt-4" style={{ padding: '0 60px' }}>Reposight leverages its capabilities to streamline the process of finding open-source projects to contribute to. Probot seamlessly integrates with GitHub's API, enabling Reposight to provide efficient search functionality, customizable filters, and comprehensive project information. The Reposight app ensures a seamless and intuitive user experience, empowering contributors to discover and engage with open-source projects effortlessly.</p>
+            <p className="mt-4" style={{ padding: '0 60px' }}>Reposight leverages its capabilities to streamline the process of finding open-source projects to contribute to. Probot seamlessly integrates with GitHub API, enabling Reposight to provide efficient search functionality, customizable filters, and comprehensive project information. The Reposight app ensures a seamless and intuitive user experience, empowering contributors to discover and engage with open-source projects effortlessly.</p>
         </div>
         <div className="text-white mr-4 flex-col sm:w-1/2" style={{ flex: 1, fontSize: '2.0rem', maxWidth: "600px" }}>
             <p className="mt-4 flex-col text-xxxl" style={{ padding: '0 120px'}}>Find Open Source Project that defines you, impresses you, suits your needs.</p>
