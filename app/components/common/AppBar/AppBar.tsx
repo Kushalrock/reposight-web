@@ -3,11 +3,11 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
-  Link,
-  Input,
+  // NavbarItem,
+  // Link,
+  // Input,
 } from "@nextui-org/react";
-import SearchIcon from "./SearchIcon";
+// import SearchIcon from "./SearchIcon";
 
 const AppBar: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const AppBar: React.FC = () => {
         <NavbarBrand className="mr-4">
           <p className=" sm:block font-bold text-inherit text-2xl">Reposight</p>
         </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-3">
+        {/* <NavbarContent className="hidden sm:flex gap-3">
           <NavbarItem>
             <Link className="text-white" href="#">
               Trending
@@ -32,11 +32,11 @@ const AppBar: React.FC = () => {
               Top Rated
             </Link>
           </NavbarItem>
-        </NavbarContent>
+        </NavbarContent> */}
       </NavbarContent>
 
       <NavbarContent as="div" className="items-center" justify="end">
-        <Input
+        {/* <Input
           classNames={{
             base: "max-w-full sm:max-w-[10rem] h-10",
             mainWrapper: "h-full",
@@ -48,7 +48,7 @@ const AppBar: React.FC = () => {
           size="sm"
           startContent={<SearchIcon size={18} />}
           type="search"
-        />
+        /> */}
         {/* <Dropdown placement="bottom-end" className="bg-[#3c3c3c] text-white " >
           <DropdownTrigger>
             <Avatar
