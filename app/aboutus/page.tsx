@@ -2,7 +2,6 @@
 import React from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
-import Link from "next/link";
 
 const page = () => {
   const words = [
@@ -34,29 +33,17 @@ const page = () => {
         words={words}
       />
     <div className="text-white mt-8 px-4 flex flex-col items-center justify-center" style={{ display: 'flex' }}>
-        <blockquote className="text-center italic text-gray-400 flex flex-col items-center justify-center">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</blockquote>
+        <blockquote className="text-center italic text-gray-400 flex flex-col items-center justify-center">"Find Open Source Projects that defines you and suits you"</blockquote>
     </div>
     <div className="flex mt-8 flex-col sm:flex-row">
         <div className="text-white mr-4 flex-col sm:w-1/2" style={{ flex: 1, fontSize: '1.0rem', maxWidth: "600px" }}>
-            <p className="mt-4" style={{ padding: '0 60px' }}>Lorem ipsum dolor sit amet, ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p className="mt-4" style={{ padding: '0 60px' }}>Reposight leverages its capabilities to streamline the process of finding open-source projects to contribute to. Probot seamlessly integrates with GitHub's API, enabling Reposight to provide efficient search functionality, customizable filters, and comprehensive project information. The Reposight app ensures a seamless and intuitive user experience, empowering contributors to discover and engage with open-source projects effortlessly.</p>
         </div>
         <div className="text-white mr-4 flex-col sm:w-1/2" style={{ flex: 1, fontSize: '2.0rem', maxWidth: "600px" }}>
-            <p className="mt-4 flex-col text-xl" style={{ padding: '0 120px'}}> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className="mt-4 flex-col text-xxxl" style={{ padding: '0 120px'}}>Find Open Source Project that defines you, impresses you, suits your needs.</p>
         </div>
     </div>  
-    <style jsx>{`
-    @media only screen and (max-width: 768px) {
-            .text-white p {
-                font-size: 0.6rem;
-            }
-            .text-white p.mt-4.text-xl {
-                font-size: 1.0rem;
-            }
-            blockquote{
-                font-size: 0.6rem;
-            }
-        }
-    `}</style>
+    
     </div>
      
   );
