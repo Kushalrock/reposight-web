@@ -33,7 +33,7 @@ const page = () => {
         words={words}
       />
     <div className="text-white mt-8 px-4 flex flex-col items-center justify-center" style={{ display: 'flex' }}>
-        <blockquote className="text-center italic text-gray-400 flex flex-col items-center justify-center">"Find Open Source Projects that defines you and suits you"</blockquote>
+        <blockquote className="text-center italic text-gray-400 flex flex-col items-center justify-center">Find Open Source Projects that defines you and suits you</blockquote>
     </div>
     <div className="flex mt-8 flex-col sm:flex-row">
         <div className="text-white mr-4 flex-col sm:w-1/2" style={{ flex: 1, fontSize: '1.0rem', maxWidth: "600px" }}>
