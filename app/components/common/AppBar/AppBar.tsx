@@ -6,9 +6,9 @@ import {
   // NavbarItem,
   // Link,
   // Input,
+  Image
 } from "@nextui-org/react";
 // import SearchIcon from "./SearchIcon";
-
 const AppBar: React.FC = () => {
   return (
     <Navbar
@@ -19,7 +19,13 @@ const AppBar: React.FC = () => {
     >
       <NavbarContent justify="end">
         <NavbarBrand className="mr-4">
-          <p className=" sm:block font-bold text-inherit text-2xl">Reposight</p>
+          {/* <p className=" sm:block font-bold text-inherit text-2xl">Reposight</p> */}
+          <Image
+            src="reposight.svg"
+            alt="Logo"
+            width={200}
+            height={40}
+          />
         </NavbarBrand>
         {/* <NavbarContent className="hidden sm:flex gap-3">
           <NavbarItem>
