@@ -1,0 +1,33 @@
+@keyframes moveUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-64px);
+    }
+  }
+
+.main {
+    color: white;
+    animation: moveUp 1s ease forwards;
+}
+
+
+@media (max-width: 767px) {
+  .description {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .description {
+    font-size: 16px; /* Adjust font size for medium-sized screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .description {
+    font-size: 18px; /* Adjust font size for larger screens */
+  }
+}
+  
