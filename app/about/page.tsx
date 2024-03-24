@@ -11,7 +11,7 @@ const people = [
     id: 1,
     name: "Kushal Agrawal",
     designation: "Project Lead",
-    image: "https://i.ibb.co/tqfXHpr/kushal-pic.jpg",
+    image: "https://i.ibb.co/pdFqc9z/kushal-pic.jpg",
   },
   {
     id: 2,
@@ -47,19 +47,19 @@ const people = [
     id: 7,
     name: "Raazi Faisal",
     designation: "UI/UX Designer",
-    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+    image: "https://i.ibb.co/nCFTydw/raazi-pic.jpg",
   },
   {
     id: 8,
     name: "Mohd Zaid Husain",
     designation: "UI/UX Designer",
-    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+    image: "https://i.ibb.co/DpjQc4c/zaid-pic.jpg",
   },
   {
     id: 9,
     name: "Priyanshu Teotia",
     designation: "App Dev Lead",
-    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+    image: "https://i.ibb.co/GWvtjHn/priyanshu-pic.jpg",
   },
   {
     id: 10,
@@ -71,7 +71,7 @@ const people = [
     id: 11,
     name: "Manvi Agrawal",
     designation: "Frontend Developer",
-    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+    image: "https://i.ibb.co/djpH1PS/manvi-pic.jpg",
   },
 ];
 const page = () => {
