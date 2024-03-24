@@ -10,7 +10,7 @@ import {
 } from "@nextui-org/react";
 
 import { navLinks } from "@/constants/nav-constants";
-const AppBar: React.FC = () => {
+const AppBar = () => {
   return (
     <Navbar
       isBordered
@@ -30,13 +30,16 @@ const AppBar: React.FC = () => {
       </NavbarContent>
 
       <NavbarContent as="div" className="items-center" justify="end">
-        {navLinks.map((nav, index) => (
-          <NavbarItem key={nav.id}>
-            <Link href={nav.href}><Button>{nav.title}</Button></Link>
-          </NavbarItem>
-        ))}
+  {navLinks.map((nav, index) => (
+    <NavbarItem key={nav.id}>
+      <Link href={nav.href} className="text-white bg-black p-3 rounded-lg text-1.5xl">{nav.title}</Link>
+    </NavbarItem>
+  ))}
+</NavbarContent>
 
-      </NavbarContent>
+
+
+
     </Navbar>
   );
 };
