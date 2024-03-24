@@ -53,7 +53,7 @@ const people = [
     id: 8,
     name: "Mohd Zaid Husain",
     designation: "UI/UX Designer",
-    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+    image: "https://i.ibb.co/DpjQc4c/zaid-pic.jpg",
   },
   {
     id: 9,
