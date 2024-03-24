@@ -44,19 +44,21 @@ const AppBar = () => {
         ))}
       </NavbarContent>
 
-      <NavbarMenu isOpen={isMenuOpen} className="bg-black">
-        {navLinks.map((nav) => (
-          <NavbarMenuItem key={nav.id}>
-            <Link
-              className="text-white bg-black p-3 rounded-lg text-1.5xl"
-              href={nav.href}
-              size="lg"
-            >
-              {nav.title}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
+      {isMenuOpen && (
+        <NavbarMenu className="bg-black">
+          {navLinks.map((nav) => (
+            <NavbarMenuItem key={nav.id}>
+              <Link
+                className="text-white bg-black p-3 rounded-lg text-1.5xl"
+                href={nav.href}
+                size="lg"
+              >
+                {nav.title}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      )}
     </Navbar>
   );
 };
