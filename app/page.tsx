@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { FaGithubAlt } from "react-icons/fa";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+import Footer from "./components/Footer";
 // import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -54,11 +55,14 @@ const page = () => {
           </span>
         </button>
       </Link>
-      <Link href="/chatbot">
+      {/* <Link href="/chatbot">
         <div className="fixed bottom-0 right-0 p-4 bg-white">
           <FaGithubAlt className="w-24 h-24 " />
         </div>
-      </Link>
+      </Link> */}
+      <div className="z-40  ">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };
