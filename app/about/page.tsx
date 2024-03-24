@@ -76,7 +76,7 @@ const people = [
 ];
 const page = () => {
   return (
-    <div className="bg-black w-full min-h-screen flex  justify-center">
+    <div className="bg-black min-w-screen min-h-screen flex  justify-center">
       <div className="w-11/12">
         <div className="md:h-4 h-4"></div>
         <div className="p-2 grid gap-4 ">
