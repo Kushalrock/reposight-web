@@ -28,7 +28,7 @@ const people = [
   {
     id: 4,
     name: "Aviral Srivastava",
-    designation: "DevOps Lead",
+    designation: "DevOps Lead ",
     image: "https://i.ibb.co/m0fB8Vs/aviral-pic-jpeg.jpg",
   },
   {
