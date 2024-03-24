@@ -32,7 +32,7 @@ const AppBar: React.FC = () => {
       <NavbarContent as="div" className="items-center" justify="end">
         {navLinks.map((nav, index) => (
           <NavbarItem key={nav.id}>
-            <Button>{nav.title}</Button>
+            <Link href={nav.href}><Button>{nav.title}</Button></Link>
           </NavbarItem>
         ))}
 
