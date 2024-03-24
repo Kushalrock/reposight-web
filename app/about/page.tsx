@@ -9,53 +9,76 @@ const words2 = `Reposight is on a mission to empower individuals and organizatio
 const people = [
   {
     id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
-    image:
-      // "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
-      "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+    name: "Kushal Agrawal",
+    designation: "Project Lead",
+    image: "https://i.ibb.co/tqfXHpr/kushal-pic.jpg",
   },
   {
     id: 2,
-    name: "Robert Johnson",
-    designation: "Product Manager",
-    image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    name: "Mohammad Shahzil",
+    designation: "Frontend Lead",
+    image: "https://i.ibb.co/CVFC8zL/IMG-0097.jpg",
   },
   {
     id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    name: "Kanishk Sharma",
+    designation: "Backend Lead",
+    image: "https://i.ibb.co/51bwMgQ/kanishk-pic.jpg",
   },
   {
     id: 4,
-    name: "Emily Davis",
-    designation: "UX Designer",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    name: "Aviral Srivastava",
+    designation: "Frontend Developer",
+    image: "https://i.ibb.co/m0fB8Vs/aviral-pic-jpeg.jpg",
   },
   {
     id: 5,
-    name: "Tyler Durden",
-    designation: "Soap Developer",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+    name: "Siddharth Tripathi",
+    designation: "Frontend Developer",
+    image: "https://i.ibb.co/R2qnkNx/siddharth-pic.jpg",
   },
   {
     id: 6,
-    name: "Dora",
-    designation: "The Explorer",
-    image:
-      "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+    name: "Kalp Patel",
+    designation: "Frontend Developer",
+    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+  },
+  {
+    id: 7,
+    name: "Raazi Faisal",
+    designation: "UI/UX Designer",
+    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+  },
+  {
+    id: 8,
+    name: "Mohd Zaid Husain",
+    designation: "UI/UX Designer",
+    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+  },
+  {
+    id: 9,
+    name: "Priyanshu Teotia",
+    designation: "App Dev Lead",
+    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
+  },
+  {
+    id: 10,
+    name: "Lakshya Mehta",
+    designation: "Social Media Manager",
+    image: "https://i.ibb.co/GxxDvQ2/lakshya-pic.jpg",
+  },
+  {
+    id: 11,
+    name: "Manvi Agrawal",
+    designation: "Frontend Developer",
+    image: "https://i.ibb.co/bQ0cXXb/kalp-pic.jpg",
   },
 ];
 const page = () => {
   return (
     <div className="bg-black w-full min-h-screen flex  justify-center">
       <div className="w-11/12">
-        <div className="md:h-28 h-12"></div>
+        <div className="md:h-4 h-4"></div>
         <div className="p-2 grid gap-4 ">
           <h1 className="text-neutral-300 text-4xl md:text-6xl font-semibold my-3">
             Who we are ?
