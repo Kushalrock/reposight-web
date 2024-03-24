@@ -1,11 +1,7 @@
 export const navLinks = [
-    {
-      id: "getstarted",
-      title: "Get Started",
-    },
-    {
-      id: "contribute",
-      title: "Contribute",
-    },
+  { id: "about", title: "About", href: "/about" },
+  { id: "privacyPolicy", title: "Privacy Policy", href: "/privacyPolicy" },
   ];
+
+
   

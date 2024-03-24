@@ -1,8 +1,5 @@
-'use client'
 import { useState } from "react";
-// import close from "@/assets/nav-assets/close"; 
-// import logo from "@/assets/nav-assets/logo"; 
-// import menu from "@/assets/nav-assets/menu"; 
+import Link from "next/link"; // Import Link component
 import { navLinks } from "@/constants/nav-constants";
 import Image from 'next/image';
 
@@ -10,10 +7,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
     <nav className="md:w-full flex py-4 sm:justify-between items-center navbar bg-transparent absolute">
-      {/* <img src={logo} alt="hoobank" className="w-[124px] h-[32px]" /> */}
-      {/* <Img></Img> */}
-      
-      <div className="text-white p-5 text-3xl" >Reposight</div> 
+      <div className="text-white p-5 text-3xl">Reposight</div> 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
@@ -25,26 +19,30 @@ const Navbar = () => {
             <a href={`#${nav.id}`}>{nav.title}</a>
           </li>
         ))}
+        {/* Add Link for About */}
+        <li className="font-poppins font-normal cursor-pointer text-[16px] text-white">
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+        </li>
+        {/* Add Link for Privacy Policy */}
+        <li className="font-poppins font-normal cursor-pointer text-[16px] text-white">
+          <Link href="/privacyPolicy">
+            <a>Privacy Policy</a>
+          </Link>
+        </li>
       </ul>
       <div className="sm:hidden flex flex-1 justify-end items-center">
-        {/* <img
-          src={toggle ? close : menu}
-          alt="menu"
-          className="w-[28px] h-[28px] object-contain"
-          onClick={() => {
-            setToggle((prev) => !prev);
-          }}
-        /> */}
          <Image
-        src={toggle ? "/close.svg" : "/menu.svg"}
-        alt="menu"
-        className="w-[28px] h-[28px] object-contain"
-        width={28}
-        height={28}
-        onClick={() => {
-          setToggle((prev) => !prev);
-        }}
-      />
+            src={toggle ? "/close.svg" : "/menu.svg"}
+            alt="menu"
+            className="w-[28px] h-[28px] object-contain"
+            width={28}
+            height={28}
+            onClick={() => {
+              setToggle((prev) => !prev);
+            }}
+          />
         <div
           className={`${
             toggle ? "flex" : "hidden"
@@ -61,6 +59,18 @@ const Navbar = () => {
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
+            {/* Add Link for About */}
+            <li className="font-poppins font-normal cursor-pointer text-[16px] text-white">
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </li>
+            {/* Add Link for Privacy Policy */}
+            <li className="font-poppins font-normal cursor-pointer text-[16px] text-white">
+              <Link href="/privacyPolicy">
+                <a>Privacy Policy</a>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
