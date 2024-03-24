@@ -77,22 +77,22 @@ const people = [
 const page = () => {
   return (
     <div className="bg-black min-w-screen min-h-screen flex  justify-center">
-      <div className="w-11/12">
+      <div className="md:w-2/3 p-1 ">
         <div className="md:h-4 h-4"></div>
         <div className="p-2 grid gap-4 ">
-          <h1 className="text-neutral-300 text-4xl md:text-6xl font-semibold my-3">
+          <h1 className="text-neutral-300 text-4xl md:text-5xl font-semibold my-3">
             Who we are ?
           </h1>{" "}
-          <div className="text-neutral-400 text-2xl md:text-4xl text-justify my-3 ">
+          <div className="text-neutral-400 text-2xl md:text-3xl text-justify my-3 ">
             <TextGenerateEffect words={words1} />
           </div>
-          <h1 className="text-neutral-300 text-4xl md:text-6xl font-semibold my-3">
+          <h1 className="text-neutral-300 text-4xl md:text-5xl font-semibold my-3">
             Our Mission
           </h1>
-          <div className="text-neutral-400 text-2xl md:text-4xl text-justify my-3 ">
+          <div className="text-neutral-400 text-2xl md:text-3xl text-justify my-3 ">
             <TextGenerateEffect words={words2} />
           </div>
-          <h1 className="text-neutral-300 text-4xl md:text-6xl font-semibold my-5">
+          <h1 className="text-neutral-300 text-4xl md:text-5xl font-semibold my-5">
             The Team
           </h1>
           <div className="flex flex-row">
