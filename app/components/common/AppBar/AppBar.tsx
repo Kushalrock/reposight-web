@@ -5,15 +5,12 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button, // Import Button component
-  // Input,
+  Button, 
   Image
 } from "@nextui-org/react";
-// import SearchIcon from "./SearchIcon";
+
 import { navLinks } from "@/constants/nav-constants";
 const AppBar: React.FC = () => {
-
-
   return (
     <Navbar
       isBordered
@@ -32,16 +29,7 @@ const AppBar: React.FC = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent as="div" className="items-center" justify="end">
-        {/* Render navLinks using NavbarItem and Link */}
-        {navLinks.map((nav, index) => (
-          <NavbarItem key={nav.id}>
-            <Link href={nav.href}><Button auto>{nav.title}</Button></Link>
-          </NavbarItem>
-        ))}
-        {/* Button combined with navLinks */}
-
-      </NavbarContent>
+      
     </Navbar>
   );
 };
