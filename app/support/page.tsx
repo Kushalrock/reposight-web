@@ -11,16 +11,16 @@ const page = () => {
           loading="lazy"
           width="100%"
           height="996"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
+          // frameborder="0"
+          // marginheight="0"
+          // marginwidth="0"
           title="Reposight Support"
         ></iframe>
         <Script
           id="tally-js"
           src="https://tally.so/widgets/embed.js"
           onLoad={() => {
-            Tally.loadEmbeds();
+            (window as any).Tally.loadEmbeds();
           }}
         />
       </div>
