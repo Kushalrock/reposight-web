@@ -1,0 +1,36 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install SSH Client
+        run: sudo apt-get install -y openssh-client expect
+
+      - name: SSH into Server and Deploy
+        env:
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+        run: |
+          sshpass -p $SERVER_PASSWORD ssh reposightmain@98.70.10.106 << 'EOF'
+            cd reposight-web
+            git fetch
+            git checkout master
+            git pull
+            expect -c '
+              spawn sudo npm run build
+              expect "assword:"
+              send "$env(SERVER_PASSWORD)\r"
+              expect eof
+            '
+            pm2 list
+            pm2 reload website
+          EOF
