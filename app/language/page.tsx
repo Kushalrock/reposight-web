@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import useFilterStore from "../Store/store";
 
-const options: string[] = ["C/Cpp", "C#", "Javascript", "Java", "Python", "Other"];
+const options: string[] = ["C/Cpp", "C#", "JavaScript", "Java", "Python", "Other"];
 
 const Page: React.FC = () => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
