@@ -21,11 +21,11 @@ const RepoCard: React.FC<RepoCardProps> = ({ fields }) => {
   )}&repoDesc=${encodeURIComponent(description)}&difficulty=${encodeURIComponent(difficulties.join(','))}`;
   console.log(decodeURIComponent(queryString));
   return (
-    <Card className="w-full p-2 m-2 bg-[#3c3c3c] text-black ">
+    <Card className="w-full p-2 m-2 bg-white text-black ">
       <CardHeader className="flex gap-3">
         <div className="flex flex-col">
           <Link href={`/issues${queryString}`}>
-            <p className="text-md">{repoName}</p>
+            <p className="text-md font-bold">{repoName}</p>
           </Link>
           <p className="text-small text-default-500">{ownerName}</p>
         </div>
