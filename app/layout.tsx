@@ -23,7 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider       signInFallbackRedirectUrl="/language"
+    signUpFallbackRedirectUrl="/language">
       <html lang="en">
         <body className={inter.className}>
           <Providers>
