@@ -75,14 +75,7 @@ const FilterMenu: React.FC<AppProps> = ({ className }) => {
       >
         <Difficulty />
       </AccordionItem>
-      <AccordionItem
-        key="3"
-        aria-label="Accordion 3"
-        className="w-[175px] text-white"
-        title={<span className="text-white">Domain</span>}
-      >
-        <Domain />
-      </AccordionItem>
+    
     </Accordion>
   );
 };
