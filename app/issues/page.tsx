@@ -56,7 +56,7 @@ const IssueCardPage: React.FC = () => {
           </div>
 
           <div className="flex items-center justify-center min-h-screen">
-            <div className="p-2">
+            <div className="w-full max-w-5xl p-4">
               <TabsDemo
                 repoId={repoId as string}
                 difficulty={difficulty as string}

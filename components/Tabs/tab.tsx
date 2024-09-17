@@ -1,11 +1,6 @@
 import { Button } from "@/components/ui/button";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs";
-import IssueCard from "@/components/ui/IssueCard/IssueCard"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import IssueCard from "@/components/ui/IssueCard/IssueCard";
 
 // Define props interface
 interface TabsDemoProps {
@@ -16,7 +11,7 @@ interface TabsDemoProps {
 // Use the props in the component
 export function TabsDemo({ repoId, difficulty }: TabsDemoProps): JSX.Element {
   return (
-    <Tabs defaultValue="beginner" className="w-[400px]">
+    <Tabs defaultValue="beginner" className="w-full">
       <TabsList className="grid w-full grid-cols-3">
         <TabsTrigger value="beginner">Beginner</TabsTrigger>
         <TabsTrigger value="intermediate">Intermediate</TabsTrigger>
@@ -24,26 +19,29 @@ export function TabsDemo({ repoId, difficulty }: TabsDemoProps): JSX.Element {
       </TabsList>
 
       <TabsContent value="beginner">
-        <div className="p-4">
+        <div className="p-4 w-full">
           <h2 className="text-lg font-semibold">Beginner Level</h2>
-          <IssueCard repoId={repoId} difficulty={difficulty} /> 
-          
+          <div className="w-full">
+            <IssueCard repoId={repoId} difficulty={difficulty} />
+          </div>
         </div>
       </TabsContent>
 
       <TabsContent value="intermediate">
-        <div className="p-4">
+        <div className="p-4 w-full">
           <h2 className="text-lg font-semibold">Intermediate Level</h2>
-          <IssueCard repoId={repoId} difficulty={difficulty} /> 
-          
+          <div className="w-full">
+            <IssueCard repoId={repoId} difficulty={difficulty} />
+          </div>
         </div>
       </TabsContent>
 
       <TabsContent value="advanced">
-        <div className="p-4">
+        <div className="p-4 w-full">
           <h2 className="text-lg font-semibold">Advanced Level</h2>
-          <IssueCard repoId={repoId} difficulty={difficulty} /> 
-        
+          <div className="w-full">
+            <IssueCard repoId={repoId} difficulty={difficulty} />
+          </div>
         </div>
       </TabsContent>
     </Tabs>
